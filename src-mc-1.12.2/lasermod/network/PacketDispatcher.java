@@ -7,6 +7,7 @@ import lasermod.network.AbstractMessage.AbstractClientMessage;
 import lasermod.network.packet.client.AdvancedLaserMessage;
 import lasermod.network.packet.client.ColourConverterMessage;
 import lasermod.network.packet.client.LaserDetectorMessage;
+import lasermod.network.packet.client.LaserFilterMessage;
 import lasermod.network.packet.client.LuminousLampMessage;
 import lasermod.network.packet.client.ReflectorMessage;
 import lasermod.network.packet.client.SmallColourConverterMessage;
@@ -40,6 +41,7 @@ public class PacketDispatcher {
 		registerMessage(LuminousLampMessage.class);
 		registerMessage(ReflectorMessage.class);
 		registerMessage(SmallColourConverterMessage.class);
+		registerMessage(LaserFilterMessage.class);
 	}
 
 	private static final <T extends AbstractMessage<T> & IMessageHandler<T, IMessage> & IPacket<T>> void registerMessage(Class<T> clazz) {

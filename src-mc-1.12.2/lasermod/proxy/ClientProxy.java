@@ -3,6 +3,7 @@ package lasermod.proxy;
 import lasermod.client.render.block.TileEntityAdvancedLaserRenderer;
 import lasermod.client.render.block.TileEntityBasicLaserRenderer;
 import lasermod.client.render.block.TileEntityColourConverterRenderer;
+import lasermod.client.render.block.TileEntityLaserFilterRenderer;
 import lasermod.client.render.block.TileEntityLuminousLampRenderer;
 import lasermod.client.render.block.TileEntityReflectorRenderer;
 import lasermod.client.render.block.TileEntitySmallColourConverterRenderer;
@@ -11,6 +12,7 @@ import lasermod.handler.WorldOverlayHandler;
 import lasermod.tileentity.TileEntityAdvancedLaser;
 import lasermod.tileentity.TileEntityBasicLaser;
 import lasermod.tileentity.TileEntityColourConverter;
+import lasermod.tileentity.TileEntityLaserFilter;
 import lasermod.tileentity.TileEntityLuminousLamp;
 import lasermod.tileentity.TileEntityReflector;
 import lasermod.tileentity.TileEntitySmallColourConverter;
@@ -39,6 +41,7 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityReflector.class, new TileEntityReflectorRenderer());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLuminousLamp.class, new TileEntityLuminousLampRenderer());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySmallColourConverter.class, new TileEntitySmallColourConverterRenderer());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLaserFilter.class, new TileEntityLaserFilterRenderer());
 	}
 	
 	@Override

@@ -10,5 +10,5 @@ public class BlockNames {
 	public static final String COLOUR_CONVERTER_SMALL = Reference.MOD_ID + ":colour_converter_small";
 	public static final String LUMINOUS_LAMP = Reference.MOD_ID + ":luminous_lamp";
 	public static final String LENS_WORKBENCH = Reference.MOD_ID + ":lens_workbench";
-
+	public static final String LASER_FILTER = Reference.MOD_ID + ":laser_filter";
 }

@@ -1,0 +1,26 @@
+A list of OpenComputers methods for components added by this mod.
+
+Laser Detector:
+	Component name: laser_detector
+	Functions:
+		isActive():
+			Returns true if the laser detector is receiving a laser, false if it is not.
+		getLaserAtSide(side):
+			Returns information about the laser at the given side. The values returned correspond 
+			to red, green, blue, direction, and a table describing the upgrades.
+		getLasers():
+			Returns a set of tables containing the lasers at each side. Each side's laser is stored in the 
+			same order as the Sides API. The format of the subtable for each laser matches the results of getLaserAtSide()
+Laser Reflector:
+	Component name: laser_reflector
+	Functions:
+		getSideState(side):
+			Returns the state of the given side as true for open, false for closed.
+		getSideStates():
+			Returns a table describing the state of each side as true for open, or false for closed. The order the sides are 
+			returned in is the same as the order of the values in the Sides API.
+		setSideState(side, state):
+			Sets the state of the given side to the given state. Returns true if this led to a change and false if it did not.
+		setSideStates(states):
+			Sets the state of the sides to the given table. The table provided must contain at least 6 values, the first 6 of which 
+			must be boolean values. The order the sides are set in is the same as the order of the values in the Sides API.

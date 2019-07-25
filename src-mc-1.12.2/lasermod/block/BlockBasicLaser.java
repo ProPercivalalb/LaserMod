@@ -40,22 +40,22 @@ public class BlockBasicLaser extends BlockPoweredRedstone {
 		TileEntityBasicLaser basiclaser = (TileEntityBasicLaser)world.getTileEntity(pos);
     	
         if (world.isBlockIndirectlyGettingPowered(pos) == 0) {
-        	BlockActionPos reciver = LaserUtil.getFirstBlock(basiclaser, EnumFacing.getFront(basiclaser.getBlockMetadata()));
-    		if(reciver != null && reciver.isLaserReceiver(EnumFacing.getFront(basiclaser.getBlockMetadata()))) {
-    			reciver.getLaserReceiver(EnumFacing.getFront(basiclaser.getBlockMetadata())).removeLasersFromSide(world, pos, EnumFacing.getFront(basiclaser.getBlockMetadata()).getOpposite());
+        	BlockActionPos reciver = LaserUtil.getFirstBlock(basiclaser, EnumFacing.byIndex(basiclaser.getBlockMetadata()));
+    		if(reciver != null && reciver.isLaserReceiver(EnumFacing.byIndex(basiclaser.getBlockMetadata()))) {
+    			reciver.getLaserReceiver(EnumFacing.byIndex(basiclaser.getBlockMetadata())).removeLasersFromSide(world, pos, EnumFacing.byIndex(basiclaser.getBlockMetadata()).getOpposite());
     		}
         }
         else if (world.isBlockIndirectlyGettingPowered(pos) > 0) {
-    		BlockActionPos reciver = LaserUtil.getFirstBlock(basiclaser, EnumFacing.getFront(basiclaser.getBlockMetadata()));
-    		if(reciver != null && reciver.isLaserReceiver(EnumFacing.getFront(basiclaser.getBlockMetadata()))) {
+    		BlockActionPos reciver = LaserUtil.getFirstBlock(basiclaser, EnumFacing.byIndex(basiclaser.getBlockMetadata()));
+    		if(reciver != null && reciver.isLaserReceiver(EnumFacing.byIndex(basiclaser.getBlockMetadata()))) {
     		  	
-    			LaserInGame laserInGame = basiclaser.getOutputLaser(EnumFacing.getFront(basiclaser.getBlockMetadata()));
+    			LaserInGame laserInGame = basiclaser.getOutputLaser(EnumFacing.byIndex(basiclaser.getBlockMetadata()));
     		  	
-    		  	if(reciver.getLaserReceiver(EnumFacing.getFront(basiclaser.getBlockMetadata())).canPassOnSide(world, pos, EnumFacing.getFront(basiclaser.getBlockMetadata()).getOpposite(), laserInGame))
-    		  		reciver.getLaserReceiver(EnumFacing.getFront(basiclaser.getBlockMetadata())).passLaser(world, pos, EnumFacing.getFront(basiclaser.getBlockMetadata()).getOpposite(), laserInGame);
+    		  	if(reciver.getLaserReceiver(EnumFacing.byIndex(basiclaser.getBlockMetadata())).canPassOnSide(world, pos, EnumFacing.byIndex(basiclaser.getBlockMetadata()).getOpposite(), laserInGame))
+    		  		reciver.getLaserReceiver(EnumFacing.byIndex(basiclaser.getBlockMetadata())).passLaser(world, pos, EnumFacing.byIndex(basiclaser.getBlockMetadata()).getOpposite(), laserInGame);
     		}
     		else if(reciver != null) {
-    			LaserInGame laserInGame = basiclaser.getOutputLaser(EnumFacing.getFront(basiclaser.getBlockMetadata()));
+    			LaserInGame laserInGame = basiclaser.getOutputLaser(EnumFacing.byIndex(basiclaser.getBlockMetadata()));
     			
     			for(ILaser laser : laserInGame.getLaserType()) laser.actionOnBlock(reciver);
     		}
